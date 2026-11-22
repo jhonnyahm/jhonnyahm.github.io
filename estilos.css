@@ -1,0 +1,86 @@
+:root {
+  --marino: #0b2545;
+  --marino-2: #13315c;
+  --marino-3: #1d4e89;
+  --acento: #19c3a6;
+  --blanco: #ffffff;
+  --fondo: #f5f8fc;
+  --texto: #1b2a3a;
+  --suave: #4d5d70;
+  --borde: #dbe3ee;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--texto); background: var(--blanco); line-height: 1.6; font-size: 17px;
+}
+a { color: var(--marino-3); }
+a:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
+.contenedor { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+
+/* Encabezado */
+.encabezado { background: var(--blanco); border-bottom: 1px solid var(--borde); position: sticky; top: 0; z-index: 10; }
+.encabezado .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 0; }
+.marca { white-space: nowrap; display: flex; align-items: center; gap: .6rem; color: var(--marino); text-decoration: none; font-weight: 800; font-size: 1.15rem; }
+.marca img { width: 44px; height: auto; }
+.menu { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.menu a { color: var(--marino); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.menu a:hover { color: var(--marino-3); text-decoration: underline; }
+
+/* Portada */
+.portada { background: linear-gradient(160deg, var(--marino) 0%, var(--marino-2) 60%, var(--marino-3) 100%); color: var(--blanco); padding: 4.5rem 0 4rem; }
+.portada .contenedor { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: center; }
+.portada h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 .8rem; }
+.eslogan { font-size: clamp(1.15rem, 2.6vw, 1.45rem); color: #bfe9e1; margin: 0 0 1.2rem; font-weight: 600; }
+.portada p { color: #e3ebf5; max-width: 38rem; }
+.emblema { justify-self: center; background: var(--blanco); border-radius: 28px; padding: 1.6rem; box-shadow: 0 18px 40px rgba(0,0,0,.25); }
+.emblema img { display: block; width: min(210px, 50vw); height: auto; }
+.boton { display: inline-block; margin-top: 1rem; background: var(--blanco); color: var(--marino); padding: .8rem 1.4rem; border-radius: 12px; font-weight: 700; text-decoration: none; }
+.boton:hover { background: #e6f7f3; }
+
+/* Secciones */
+section { padding: 3.5rem 0; }
+.alterna { background: var(--fondo); }
+h2 { color: var(--marino); font-size: clamp(1.5rem, 3.5vw, 2rem); margin: 0 0 1rem; }
+.intro { color: var(--suave); max-width: 46rem; }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.tarjeta { background: var(--blanco); border: 1px solid var(--borde); border-radius: 16px; padding: 1.2rem 1.3rem; }
+.tarjeta h3 { margin: 0 0 .35rem; color: var(--marino); font-size: 1.05rem; }
+.tarjeta p { margin: 0; color: var(--suave); font-size: .97rem; }
+.producto { border-left: 6px solid var(--acento); background: var(--blanco); border-radius: 16px; padding: 1.6rem 1.6rem; border-top: 1px solid var(--borde); border-right: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+.etiqueta { display: inline-block; background: #e6f7f3; color: #0c6b5b; font-weight: 700; font-size: .8rem; padding: .2rem .6rem; border-radius: 999px; letter-spacing: .02em; }
+.producto h3 { color: var(--marino); font-size: 1.5rem; margin: .5rem 0 .4rem; }
+.lista { margin: 1rem 0 0; padding-left: 1.2rem; }
+.lista li { margin: .25rem 0; }
+
+/* Contacto */
+.contacto dl { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.2rem; margin: 1rem 0 0; }
+.contacto dt { font-weight: 700; color: var(--marino); }
+.contacto dd { margin: 0; color: var(--texto); overflow-wrap: anywhere; }
+
+/* Pie */
+.pie { background: var(--marino); color: #cfdbea; padding: 1.8rem 0; font-size: .92rem; }
+.pie .contenedor { display: flex; flex-wrap: wrap; gap: .8rem 1.6rem; justify-content: space-between; }
+.pie a { color: var(--blanco); }
+
+/* Documento (política) */
+.documento { padding: 2.5rem 0 3.5rem; }
+.documento h1 { color: var(--marino); font-size: clamp(1.7rem, 4vw, 2.3rem); margin-top: 0; }
+.documento h2 { font-size: 1.25rem; margin-top: 1.8rem; }
+.documento p, .documento li { color: var(--texto); max-width: 50rem; }
+.nota { color: var(--suave); font-size: .95rem; }
+
+@media (max-width: 760px) {
+  .portada { padding: 3rem 0; }
+  .portada .contenedor { grid-template-columns: 1fr; }
+  .emblema { order: -1; padding: 1rem; }
+  .emblema img { width: 140px; }
+  .menu { gap: .8rem; }
+  .menu a { font-size: .88rem; }
+  .contacto dl { grid-template-columns: 1fr; gap: .1rem; }
+  .contacto dd { margin-bottom: .6rem; }
+}
+@media (max-width: 480px) {
+  .menu .opcional { display: none; }
+}
